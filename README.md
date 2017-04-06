@@ -1,6 +1,6 @@
 # Rails Programming Task
 
-### Please complete the following steps.
+### Please complete the following task.
 *Note: This task should take no longer than 1-2 hours at the most to complete.*
 
 
@@ -60,10 +60,10 @@
 Create the following tests:
 
   1. `Submission form`:
-    1. Verify that the form is on screen.
+      1. Verify that the form is on screen.
   2. `Complaints dashboard`:
-    1. Verify that there are 10 complaints in total.
-    2. Verify that 5 complaints have the same address.
+      1. Verify that there are 10 complaints in total.
+      2. Verify that 5 complaints have the same address.
   3. Create 1 short test of your own. The question you should ask yourself is, "what would I test for if I was building this application and the client did not specify any particular tests for me to write?" You may be asked questions about the test you created via a Github pull request review.
 
 ## Once Complete
