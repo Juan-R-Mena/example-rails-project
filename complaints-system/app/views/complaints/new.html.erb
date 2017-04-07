@@ -1,0 +1,9 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    New Complaint
+  </div>
+  <div class="panel-body">
+    <%= render 'form', complaint: @complaint %>
+  </div>
+</div>
+<%= link_to 'Back', complaints_path, class: "btn btn-primary"%>

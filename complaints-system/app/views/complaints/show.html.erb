@@ -1,0 +1,19 @@
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  </div>
+  <div class="panel-body">
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>User email:</strong>
+      <%= @complaint.user_email %>
+    </p>
+    <p>
+      <strong>Content:</strong>
+      <%= @complaint.content %>
+    </p>
+
+    <%= link_to 'Edit', edit_complaint_path(@complaint), class: "btn btn-primary" %> |
+    <%= link_to 'Back', complaints_path, class: "btn btn-primary" %>
+  </div>
+</div>
