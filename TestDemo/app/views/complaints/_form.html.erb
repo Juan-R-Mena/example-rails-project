@@ -1,0 +1,55 @@
+<div class="form-horizontal">
+  <%= form_for(complaint) do |f| %>
+    <% if complaint.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+
+        <ul>
+        <% complaint.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :email_address, class:"col-sm-2 control-label" %>
+      <div class="col-sm-6">
+      <%= f.text_field :email_address, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :content, class:"col-sm-2 control-label" %>
+      <div class="col-sm-6">
+      <%= f.text_area :content, class:"form-control", :maxlength => 3000  %>
+      <p>0 of 3000 characters used</p>
+      </div>
+    </div>
+    <center>
+      <div class="actions">
+        <% if params[:action] == "edit"%>
+          <%= f.submit 'Update Complaint', :class => 'btn btn-success'%>
+        <% else %>
+          <%= f.submit 'Create Complaint', :class => 'btn btn-success'%>
+        <% end %>
+      </div>
+    </center>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var charLength = $("#complaint_content").val().length;
+    var charLimit  = $("#complaint_content").attr("maxlength");
+    $("#complaint_content").next("p").html(charLength + " of " + charLimit + " characters used");
+  })
+  $("textarea").keyup(function (e) {
+    var $this      = $(this),
+        charLength = $this.val().length,
+        charLimit  = $this.attr("maxlength");
+    $this.next("p").html(charLength + " of " + charLimit + " characters used");
+    if ($this.val().length >= charLimit) {
+      $this.next("p").html("<strong>You may only have up to " + charLimit + " characters.</strong>");
+    }
+  });
+</script>

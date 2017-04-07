@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @complaint.email_address %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <% debugger%>
+  <%= @complaint.content %>
+</p>
+
+<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
+<%= link_to 'Back', complaints_path %>
