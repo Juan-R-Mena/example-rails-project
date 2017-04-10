@@ -1,29 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Complaints</h1>
+<h1>Complaints</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User email</th>
+      <th>#</th>
+      <th>User Email</th>
       <th>Content</th>
-      <th colspan="3"></th>
+      <th>Actions</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @complaints.each do |complaint| %>
+    <% @complaints.each_with_index do |complaint, index| %>
       <tr>
+        <th scope="row"><%= index+1%></th>
         <td><%= complaint.user_email %></td>
         <td><%= complaint.content %></td>
-        <td><%= link_to 'Show', complaint %></td>
-        <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
-        <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_complaint_path(complaint) %> <%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Complaint', new_complaint_path %>

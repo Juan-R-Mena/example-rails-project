@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+5.times do
+  dummy_content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non varius mi, eu maximus odio. Ut id mauris ante. Nulla facilisi. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sodales egestas vehicula. In facilisis tempus orci, quis euismod ante rutrum vitae. Cras tempus faucibus mollis. Mauris tristique dapibus neque a convallis. Suspendisse gravida magna vitae massa ullamcorper, quis cursus purus fermentum. Donec vel hendrerit metus. Integer id mauris facilisis tortor vestibulum faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam dapibus, urna quis molestie hendrerit, quam tortor tincidunt mi, ac cursus diam sapien nec orci. Curabitur bibendum, nisi id tempor volutpat, leo lorem tempus velit, quis malesuada nisi leo non lacus. Ut urna orci, elementum in luctus eget, faucibus sollicitudin risus. Cras a euismod ligula. Aliquam accumsan vitae felis euismod varius. Morbi laoreet, odio vitae malesuada rutrum, dui nisi placerat tellus, sit amet pharetra eros lectus ut metus. Aliquam suscipit metus nec felis auctor, nec iaculis neque condimentum. Duis dignissim et enim in gravida. Curabitur hendrerit placerat nunc, ac dictum augue ultrices vitae. Donec non purus id nibh euismod bibendum. Donec maximus ante ac sodales eleifend. Suspendisse ultrices fermentum orci, in venenatis est finibus quis. Nam felis augue, fermentum sed libero sed, accumsan eleifend ligula."
+  content = dummy_content.truncate(2000)
+  complaint = Complaint.create(user_email: "hello@example.com", content: content)
+end
+
+(1..5).each_with_index do |index|
+  dummy_content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non varius mi, eu maximus odio. Ut id mauris ante. Nulla facilisi. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sodales egestas vehicula. In facilisis tempus orci, quis euismod ante rutrum vitae. Cras tempus faucibus mollis. Mauris tristique dapibus neque a convallis. Suspendisse gravida magna vitae massa ullamcorper, quis cursus purus fermentum. Donec vel hendrerit metus. Integer id mauris facilisis tortor vestibulum faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam dapibus, urna quis molestie hendrerit, quam tortor tincidunt mi, ac cursus diam sapien nec orci. Curabitur bibendum, nisi id tempor volutpat, leo lorem tempus velit, quis malesuada nisi leo non lacus. Ut urna orci, elementum in luctus eget, faucibus sollicitudin risus. Cras a euismod ligula. Aliquam accumsan vitae felis euismod varius. Morbi laoreet, odio vitae malesuada rutrum, dui nisi placerat tellus, sit amet pharetra eros lectus ut metus. Aliquam suscipit metus nec felis auctor, nec iaculis neque condimentum. Duis dignissim et enim in gravida. Curabitur hendrerit placerat nunc, ac dictum augue ultrices vitae. Donec non purus id nibh euismod bibendum. Donec maximus ante ac sodales eleifend. Suspendisse ultrices fermentum orci, in venenatis est finibus quis. Nam felis augue, fermentum sed libero sed, accumsan eleifend ligula."
+  content = dummy_content.truncate(98)
+  complaint = Complaint.create(user_email: "hello"+index.to_s+"@example.com", content: content)
+end
