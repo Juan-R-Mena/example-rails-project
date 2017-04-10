@@ -31,7 +31,7 @@ RSpec.describe ComplaintsController, :type => :controller do
 
     it "can be complaints is five equal email address " do
       expect(@complaints_aray.count).to eq(5)
-      expect(@complaints_aray.first.user_email).to eq("hemant@gmail.com")
+      expect(@complaints_aray.first.user_email).to eq("same_test_user@gmail.com")
       expect(response).to be_success
       get :index
     end
