@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12 show-complaint">
+  <div class="content text-center">
+    <h2>Content</h2>
+    <p>    
+      <%= @complaint.content %>
+    </p>
+    <h5><strong>Email:</strong> <%= @complaint.user_email %></h5>
+  </div>
 
-<p>
-  <strong>User email:</strong>
-  <%= @complaint.user_email %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @complaint.content %>
-</p>
-
-<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
-<%= link_to 'Back', complaints_path %>
+  <div class="actions pull-right">
+    <%= link_to '<- Back', complaints_path %> |
+    <%= link_to 'Edit', edit_complaint_path(@complaint) %>
+  </div>
+</div>

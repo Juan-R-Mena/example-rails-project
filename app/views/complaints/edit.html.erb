@@ -1,6 +1,8 @@
-<h1>Editing Complaint</h1>
+<div class="col-md-offset-2 col-md-8 form-box">
+  <h2 class="text-center">Editing Complaint</h2>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @complaint %> |
-<%= link_to 'Back', complaints_path %>
+  <%= link_to '<- Back', complaints_path %>
+  <%= link_to 'Show', @complaint, class: 'pull-right' %>
+</div>

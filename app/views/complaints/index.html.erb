@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="all-complaints">
+  <h2>Listing Complaints</h2>
 
-<h1>Listing Complaints</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User email</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @complaints.each do |complaint| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= complaint.user_email %></td>
-        <td><%= complaint.content %></td>
-        <td><%= link_to 'Show', complaint %></td>
-        <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
-        <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Content</th>
+        <th>Email</th>
+        <th> Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @complaints.each do |complaint| %>
+        <tr>
+          <td><%= complaint.content.capitalize.truncate(300) %></td>
+          <td><%= complaint.user_email %></td>
+          <td>
+            <%= link_to fa_icon_for('show'), complaint %>
+            <br>
+            <%= link_to fa_icon_for('edit'), edit_complaint_path(complaint) %>
+            <br>
+            <%= link_to fa_icon_for('delete'), complaint, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Complaint', new_complaint_path %>
+  <br>
+
+  <%= link_to 'New Complaint', new_complaint_path %>
+</div>

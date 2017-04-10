@@ -24,7 +24,7 @@ development:
   host: localhost
   username: postgres
   password: 12345678
-  database: TestDemo_development
+  database: TestDemo_development_1
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
