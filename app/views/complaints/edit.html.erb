@@ -1,0 +1,8 @@
+<div class="col-md-offset-2 col-md-8 form-box">
+  <h2 class="text-center">Editing Complaint</h2>
+
+  <%= render 'form', complaint: @complaint, path: @path %>
+
+  <%= link_to '<- Back', :back %>
+  <%= link_to 'Show', @complaint, class: 'pull-right' %>
+</div>

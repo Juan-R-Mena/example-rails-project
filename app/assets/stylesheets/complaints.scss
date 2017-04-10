@@ -1,0 +1,27 @@
+// Place all the styles related to the complaints controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-box {
+  border: 1px solid;
+  padding: 20px;
+  background: whitesmoke;
+  border-color: gray;
+}
+
+.all-complaints {
+  th {
+    text-align: center;
+  }
+  th,td {
+    border: 1px solid;
+    border-color: grey;
+    padding: 10px;
+  }
+  tr td:last-child {
+    text-align: center;
+  }
+  .fa:hover {
+    cursor: pointer;
+  }
+}

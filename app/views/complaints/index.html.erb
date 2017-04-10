@@ -1,0 +1,33 @@
+<div class="all-complaints">
+  <h2>Listing Complaints</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Content</th>
+        <th>Email</th>
+        <th> Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @complaints.each do |complaint| %>
+        <tr>
+          <td><%= complaint.content.capitalize.truncate(300) %></td>
+          <td><%= complaint.user_email %></td>
+          <td>
+            <%= link_to fa_icon_for('show'), complaint %>
+            <br>
+            <%= link_to fa_icon_for('edit'), edit_complaint_path(complaint) %>
+            <br>
+            <%= link_to fa_icon_for('delete'), complaint, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Complaint', new_complaint_path %>
+</div>
