@@ -1,0 +1,14 @@
+<div class="col-md-12 show-complaint">
+  <div class="content text-center">
+    <h2>Content</h2>
+    <p>    
+      <%= @complaint.content %>
+    </p>
+    <h5><strong>Email:</strong> <%= @complaint.user_email %></h5>
+  </div>
+
+  <div class="actions pull-right">
+    <%= link_to '<- Back', :back %> |
+    <%= link_to 'Edit', edit_complaint_path(@complaint) %>
+  </div>
+</div>
