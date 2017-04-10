@@ -18,7 +18,8 @@
     border-color: grey;
     padding: 10px;
   }
-  tr td:last-child {
+
+  tr td:first-child, td:last-child {
     text-align: center;
   }
   .fa:hover {
