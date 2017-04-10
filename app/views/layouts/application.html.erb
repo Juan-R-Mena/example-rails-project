@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ComplaintTestApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+	  <a class="navbar-brand" href="#">Complaints-test-app</a>
+		<%= link_to "Dashboard", complaints_path, class: "navbar-brand" %>
+		<%= link_to 'New Complaint', new_complaint_path, class: "navbar-brand" %>
+	</nav>
+<div class="container">
+	<%= yield %>
+</div>
+
+</body>
+</html>
