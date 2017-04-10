@@ -29,5 +29,14 @@ RSpec.describe ComplaintsController, type: :controller do
       expect(assigns(:complaint)).to be_a_new(Complaint)
     end
 	end
-	
+  
+  context "POST create" do
+    it "Creates a complaint in database" do
+      params = { complaint: { email: "hello@example.com", content: "This is a test complaint record." } }
+      post :create, params
+      complaint = Complaint.last
+      expect(response).to redirect_to(complaint_path(id: complaint.id))
+    end
+  end
+  	
 end
