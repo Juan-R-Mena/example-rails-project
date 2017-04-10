@@ -13,10 +13,12 @@ class ComplaintsController < ApplicationController
   # GET /complaints/new
   def new
     @complaint = Complaint.new
+    @path = complaints_path
   end
 
   # GET /complaints/1/edit
   def edit
+    @path = complaint_path
   end
 
   # POST /complaints
