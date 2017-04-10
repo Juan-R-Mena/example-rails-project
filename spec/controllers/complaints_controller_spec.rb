@@ -8,11 +8,11 @@ RSpec.describe ComplaintsController, :type => :controller do
       @complaints_aray =[]
       @all_complaints = []
       (1..5).each_with_index do |id|
-        @complaints_aray << Complaint.create(user_email: "hemant@gmail.com", content: "nil")
-        @all_complaints << Complaint.create(user_email: "hemant@gmail.com"<<id.to_s, content: "nil")
+        @complaints_aray << Complaint.create(user_email: "same_test_user@gmail.com", content: "nil")
+        @all_complaints << Complaint.create(user_email: "test_user@gmail.com"<<id.to_s, content: "nil")
         @all_complaints << @complaints_aray
       end
-      Complaint.create(user_email: "hemant@gmail.com", content: "nil")
+      Complaint.create(user_email: "text@gmail.com", content: "nil")
       @complaints = Complaint.all
     end
 
