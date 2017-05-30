@@ -1,25 +1,38 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
+# PostgreSQL. Versions 8.2 and up are supported.
+
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  timeout: 5000
+  host: localhost
+  username: 
+  password: 
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: rails_test_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: rails_test_test
 
+# On Heroku and other platform providers, you may have a full connection URL
+# available as an environment variable. For example:
+#
+#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#
+# You can use this database configuration with:
+#
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
+#
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: rails_test_production
+  username: rails_test
+  password: <%= ENV['RAILS_TEST_DATABASE_PASSWORD'] %>
