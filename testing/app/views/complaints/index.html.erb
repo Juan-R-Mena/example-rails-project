@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <th>Id</th>
+    <th>Email</th>
+    <th>Complaint</th>
+  </thead>
+  <tbody>
+    <% @complaints.each do |complaint| %>
+      <tr>
+        <td><%= complaint.id %></td>
+        <td><%= complaint.email %></td>
+        <td><%= complaint.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
