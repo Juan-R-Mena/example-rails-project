@@ -16,7 +16,7 @@ RSpec.describe ComplaintsController, type: :routing do
     end
 
     it "routes to #edit" do
-      expect(:get => "/complaints/1/edit").to route_to("complaints#edit", :id => "1")
+      expect(:get => "/complaints/1/edit").not_to route_to("complaints#edit", :id => "1")
     end
 
     it "routes to #create" do
@@ -24,15 +24,15 @@ RSpec.describe ComplaintsController, type: :routing do
     end
 
     it "routes to #update via PUT" do
-      expect(:put => "/complaints/1").to route_to("complaints#update", :id => "1")
+      expect(:put => "/complaints/1").not_to route_to("complaints#update", :id => "1")
     end
 
     it "routes to #update via PATCH" do
-      expect(:patch => "/complaints/1").to route_to("complaints#update", :id => "1")
+      expect(:patch => "/complaints/1").not_to route_to("complaints#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/complaints/1").to route_to("complaints#destroy", :id => "1")
+      expect(:delete => "/complaints/1").not_to route_to("complaints#destroy", :id => "1")
     end
 
   end

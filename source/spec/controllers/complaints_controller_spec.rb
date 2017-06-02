@@ -64,14 +64,6 @@ RSpec.describe ComplaintsController, type: :controller do
     end
   end
 
-  describe "GET #edit" do
-    it "returns a success response" do
-      complaint = Complaint.create! valid_attributes
-      get :edit, {:id => complaint.to_param}, valid_session
-      expect(response).to be_success
-    end
-  end
-
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Complaint" do
@@ -91,50 +83,6 @@ RSpec.describe ComplaintsController, type: :controller do
         post :create, {:complaint => invalid_attributes}, valid_session
         expect(response).to be_success
       end
-    end
-  end
-
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested complaint" do
-        complaint = Complaint.create! valid_attributes
-        put :update, {:id => complaint.to_param, :complaint => new_attributes}, valid_session
-        complaint.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "redirects to the complaint" do
-        complaint = Complaint.create! valid_attributes
-        put :update, {:id => complaint.to_param, :complaint => valid_attributes}, valid_session
-        expect(response).to redirect_to(complaint)
-      end
-    end
-
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        complaint = Complaint.create! valid_attributes
-        put :update, {:id => complaint.to_param, :complaint => invalid_attributes}, valid_session
-        expect(response).to be_success
-      end
-    end
-  end
-
-  describe "DELETE #destroy" do
-    it "destroys the requested complaint" do
-      complaint = Complaint.create! valid_attributes
-      expect {
-        delete :destroy, {:id => complaint.to_param}, valid_session
-      }.to change(Complaint, :count).by(-1)
-    end
-
-    it "redirects to the complaints list" do
-      complaint = Complaint.create! valid_attributes
-      delete :destroy, {:id => complaint.to_param}, valid_session
-      expect(response).to redirect_to(complaints_url)
     end
   end
 

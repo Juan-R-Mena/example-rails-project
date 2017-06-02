@@ -10,7 +10,7 @@ describe 'complaint Dashboard', :type => :feature do
 
   it 'There are 10 complaints' do
     visit complaints_path
-    expect(page).to have_selector('tr', :count => 10)
+    expect(page).to have_selector('tr', :count => 11) # 10 + 1 for the tittle
   end
 
   it "There are 5 equal emails" do

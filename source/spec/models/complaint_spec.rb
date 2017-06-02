@@ -20,7 +20,7 @@ RSpec.describe Complaint, type: :model do
       subject { build(:complaint) }
 
       it { is_expected.to allow_value('some@mail.com').for(:user_email) }
-      it { is_expected.not_to allow_value('no-email').for(:email) }
+      it { is_expected.not_to allow_value('no-email').for(:user_email) }
     end
   end
 end

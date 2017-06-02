@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "complaints/new", type: :view do
   before(:each) do
-    assign(:complaint, Complaint.new(
-      :user_email => "MyString",
-      :content => "MyText"
-    ))
+    assign(:complaint, build(:complaint))
   end
 
   it "renders new complaint form" do
