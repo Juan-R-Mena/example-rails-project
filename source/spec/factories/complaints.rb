@@ -11,7 +11,7 @@
 
 FactoryGirl.define do
   factory :complaint do
-    user_email "MyString"
-    content "MyText"
+    user_email Faker::Internet.email
+    content Faker::Lorem.paragraph(4)
   end
 end

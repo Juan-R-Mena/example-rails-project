@@ -12,5 +12,15 @@
 require 'rails_helper'
 
 RSpec.describe Complaint, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Validations' do
+    it { is_expected.to validate_presence_of(:content) }
+    it { is_expected.to validate_presence_of(:user_email) }
+
+    describe 'advance email validations' do
+      subject { build(:complaint) }
+
+      it { is_expected.to allow_value('some@mail.com').for(:user_email) }
+      it { is_expected.not_to allow_value('no-email').for(:email) }
+    end
+  end
 end
