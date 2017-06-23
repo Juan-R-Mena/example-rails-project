@@ -26,14 +26,12 @@ class ComplaintsController < ApplicationController
   def create
     @complaint = Complaint.new(complaint_params)
 
-    respond_to do |format|
-      if @complaint.save
-        format.html { redirect_to @complaint, notice: 'Complaint was successfully created.' }
-        format.json { render :show, status: :created, location: @complaint }
-      else
-        format.html { render :new }
-        format.json { render json: @complaint.errors, status: :unprocessable_entity }
-      end
+    if @complaint.save
+      flash[:success] = "Complaint was successfully created."
+      redirect_to complaints_path
+    else
+      flash[:danger] = "Error occured."
+       render :new
     end
   end
 
