@@ -33,7 +33,7 @@ describe 'Submission form', :type => :feature do
 
     click_button 'Create'
 
-    expect(page).to have_content('error')
+    expect(page).to have_content(/error/i)
 
     expect(page).to have_field('complaint[user_email]')
     expect(page).to have_field('complaint[content]')

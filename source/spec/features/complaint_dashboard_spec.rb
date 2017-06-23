@@ -8,7 +8,7 @@ describe 'Complaint dashboard', :type => :feature do
 
   it "Verify that there are 10 complaints in total." do
     visit complaints_path
-    expect(page).to have_selector('tr', :count => 10)
+    expect(page).to have_selector('tbody > tr', :count => 10)
   end
 
   it "Verify that 5 complaints have the same address." do
