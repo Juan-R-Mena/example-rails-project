@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Complaints</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Email address</th>
+      <th>Complaint</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complaints.each_with_index do |complaint, index| %>
+      <tr>
+        <td><%= index+1 %></td>
+        <td><%= complaint.user_email %></td>
+        <td><%= complaint.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Complaint', new_complaint_path, {:class => "btn btn-primary"} %>
